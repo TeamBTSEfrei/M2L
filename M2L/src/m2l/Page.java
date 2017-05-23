@@ -1,20 +1,13 @@
 package m2l;
 
-import vue.Accueil;
-import vue.Utilisateur;
-
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.sql.SQLException;
 
-import controller.contUtilisateur;
-import modele.BDDConnexion;
-import modele.modeleSalle;
-import modele.modeleUtilisateur;
 
 
-public class Page extends Frame {
+public abstract class Page extends Frame {
     
 	   public Page(){
 	      super("M2L");

@@ -1,10 +1,10 @@
 package modele;
 
-import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.*;
+
+import com.mysql.jdbc.Connection;
 
 
 public class modeleUtilisateur {
@@ -16,9 +16,9 @@ public class modeleUtilisateur {
 	static int i=0;
 	
 	
-	public static void select(){
+	public static SQLUtilisateur select(){
 		
-		SQLUtilisateur user_list = new SQLUtilisateur();
+		SQLUtilisateur user = new SQLUtilisateur();
 	    
 		BDDConnexion.connexionBD();
 		try { 
@@ -33,23 +33,23 @@ public class modeleUtilisateur {
 	    while (rs.next())
 	    {
 	    	
-	    	SQLUtilisateur.setNum_user(rs.getInt("Num_User"));
-		    SQLUtilisateur.setNom(rs.getString("Nom_User"));
-		    SQLUtilisateur.setPrenom(rs.getString("Prenom_User"));
-		    SQLUtilisateur.setAdresse(rs.getString("Adresse"));
-		    SQLUtilisateur.setEmail(rs.getString("Email"));
-		    SQLUtilisateur.setTel(rs.getInt("Telephone"));
-		    SQLUtilisateur.setMdp(rs.getString("Mdp"));
+	    	user.setNum_user(rs.getInt("Num_User"));
+	    	user.setNom(rs.getString("Nom_User"));
+	    	user.setPrenom(rs.getString("Prenom_User"));
+	    	user.setAdresse(rs.getString("Adresse"));
+	    	user.setEmail(rs.getString("Email"));
+	    	user.setTel(rs.getInt("Telephone"));
+	    	user.setMdp(rs.getString("Mdp"));
 	      
 	      // print the results
 	      System.out.println(
-	    		  "Num_User " + SQLUtilisateur.getNum_user() + 
-	    		  ", Nom " + SQLUtilisateur.getNom() +
-	    		  ", Prenom " + SQLUtilisateur.getPrenom() +
-	    		  ", Address " + SQLUtilisateur.getAdresse() + 
-	      		  " ,Email " + SQLUtilisateur.getEmail() +
-	      		  " ,Telephone " + SQLUtilisateur.getTel() +
-	      		  " ,Mdp " + SQLUtilisateur.getMdp()
+	    		  "Num_User " + user.getNum_user() + 
+	    		  ", Nom " + user.getNom() +
+	    		  ", Prenom " + user.getPrenom() +
+	    		  ", Address " + user.getAdresse() + 
+	      		  " ,Email " + user.getEmail() +
+	      		  " ,Telephone " + user.getTel() +
+	      		  " ,Mdp " + user.getMdp()
 	      )
 	      ;
 	    }
@@ -61,25 +61,27 @@ public class modeleUtilisateur {
 		    System.err.println("Selection echouée "); 
 		    System.err.println(e.getMessage()); 
 		}
+		return user;
 			
 	}
 	
 	public static void insert_user(){
 		BDDConnexion.connexionBD();
+		SQLUtilisateur user = new SQLUtilisateur();
 		try { 
-			String myDriver = "com.mysql.jdbc.Driver";
+		//	String myDriver = "com.mysql.jdbc.Driver";
             String url = "jdbc:mysql://localhost/m2l?autoReconnect=true&useSSL=false"; 
-            Connection conn = DriverManager.getConnection(url,"root","root"); 
+            Connection conn = (Connection) DriverManager.getConnection(url,"root","root"); 
             Statement st = conn.createStatement();
             
             String SQL = "INSERT INTO utilisateur(`Num_User`,`Nom_User`,`Prenom_User`,`Adresse`,`Telephone`,`Email`,`Mdp`)"
             		+ "VALUES ( 4"
-            		+ ",'" +SQLUtilisateur.getNom()
-            		+ "','" +SQLUtilisateur.getPrenom()
-            		+ "','" +SQLUtilisateur.getAdresse()
-            		+ "'," +SQLUtilisateur.getTel()
-            		+ ",'" +SQLUtilisateur.getEmail()
-            		+ "','" +SQLUtilisateur.getMdp()
+            		+ ",'" +user.getNom()
+            		+ "','" +user.getPrenom()
+            		+ "','" +user.getAdresse()
+            		+ "'," +user.getTel()
+            		+ ",'" +user.getEmail()
+            		+ "','" +user.getMdp()
             		+"')";
             st.executeUpdate( SQL );
             conn.close();

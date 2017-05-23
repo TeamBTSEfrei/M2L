@@ -4,68 +4,68 @@ import java.sql.Date;
 
 public class SQLReservation {
 	
-	private static int num_res;
-	private static int num_user;
-	private static int num_bat ;
-	private static int etage ;
-	private static int num_salle;
-	private static Date date ;
+	private int num_res;
+	private int num_user;
+	private int num_bat ;
+	private int etage ;
+	private int num_salle;
+	private Date date ;
 	
-	public static int getNum_res() {
+	public int getNum_res() {
 		return num_res;
 	}
 
-	public static void setNum_res(int num_res) {
-		SQLReservation.num_res = num_res;
+	public void setNum_res(int num_res) {
+		this.num_res = num_res;
 	}
 	
 
-	public static int getNum_user() {
+	public int getNum_user() {
 		return num_user;
 	}
 
-	public static void setNum_user(int num_user) {
-		SQLReservation.num_user = num_user;
+	public void setNum_user(int num_user) {
+		this.num_user = num_user;
 	}
 
 
 
-	public static int getNum_bat() {
+	public int getNum_bat() {
 		return num_bat;
 	}
 
-	public static void setNum_bat(int num_bat) {
-		SQLReservation.num_bat = num_bat;
+	public void setNum_bat(int num_bat) {
+		this.num_bat = num_bat;
 	}
 
 
 
-	public static int getEtage() {
+	public int getEtage() {
 		return etage;
 	}
 
-	public static void setEtage(int etage) {
-		SQLReservation.etage = etage;
+	public void setEtage(int etage) {
+		this.etage = etage;
 	}
 
 
 
-	public static int getNum_salle() {
+	public int getNum_salle() {
 		return num_salle;
 	}
 
-	public static void setNum_salle(int num_salle) {
-		SQLReservation.num_salle = num_salle;
+	public void setNum_salle(int num_salle) {
+		this.num_salle = num_salle;
 	}
 
 
 
-	public static Date getDate() {
+	public Date getDate() {
 		return date;
 	}
 
-	public static void setDate(Date date) {
-		SQLReservation.date = date;
+	public void setDate(Date date) {
+		this.date = date;
 	}
 
 

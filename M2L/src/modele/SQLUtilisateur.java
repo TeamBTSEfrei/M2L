@@ -2,65 +2,65 @@ package modele;
 
 public class SQLUtilisateur {
 	
-	private static int num_user;
-	private static String nom;
-	private static String prenom ;
-	private static String adresse;
-	private static String email;
-	private static int tel;
-	private static String mdp;
+	private  int num_user;
+	private  String nom;
+	private  String prenom ;
+	private  String adresse;
+	private  String email;
+	private  int tel;
+	private  String mdp;
 	
-	public static int getNum_user() {
-		return num_user;
+	public  int getNum_user() {
+		return this.num_user;
 	}
-	public static void setNum_user(int num_user) {
-		SQLUtilisateur.num_user = num_user;
-	}
-	
-	
-	public static String getNom() {
-		return nom;
-	}
-	public static void setNom(String nom) {
-		SQLUtilisateur.nom = nom;
+	public  void setNum_user(int num_user) {
+		this.num_user = num_user;
 	}
 	
 	
-	public static String getPrenom() {
-		return prenom;
+	public  String getNom() {
+		return this.nom;
 	}
-	public static void setPrenom(String prenom) {
-		SQLUtilisateur.prenom = prenom;
-	}
-	
-	
-	public static String getAdresse() {
-		return adresse;
-	}
-	public static void setAdresse(String adresse) {
-		SQLUtilisateur.adresse = adresse;
+	public  void setNom(String nom) {
+		this.nom = nom;
 	}
 	
 	
-	public static String getEmail() {
-		return email;
+	public  String getPrenom() {
+		return this.prenom;
 	}
-	public static void setEmail(String email) {
-		SQLUtilisateur.email = email;
+	public  void setPrenom(String prenom) {
+		this.prenom = prenom;
 	}
 	
 	
-	public static int getTel() {
-		return tel;
+	public  String getAdresse() {
+		return this.adresse;
 	}
-	public static void setTel(int tel) {
-		SQLUtilisateur.tel = tel;
+	public  void setAdresse(String adresse) {
+		this.adresse = adresse;
 	}
-	public static String getMdp() {
-		return mdp;
+	
+	
+	public  String getEmail() {
+		return this.email;
 	}
-	public static void setMdp(String mdp) {
-		SQLUtilisateur.mdp = mdp;
+	public  void setEmail(String email) {
+		this.email = email;
+	}
+	
+	
+	public  int getTel() {
+		return this.tel;
+	}
+	public  void setTel(int tel) {
+		this.tel = tel;
+	}
+	public  String getMdp() {
+		return this.mdp;
+	}
+	public  void setMdp(String mdp) {
+		this.mdp = mdp;
 	}
 	
 	

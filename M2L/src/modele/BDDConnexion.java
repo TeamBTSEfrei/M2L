@@ -2,11 +2,13 @@ package modele;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
+
 
 public class BDDConnexion {
+	private static String url = "jdbc:mysql://localhost/m2l?autoReconnect=true&useSSL=false";
+	private static String log ="root";
+	private static String mdp ="root";
 	
 	public BDDConnexion(){
 		
@@ -15,11 +17,11 @@ public class BDDConnexion {
 	public static Connection conn ;
 	public static void connexionBD()
 	{
-		String myDriver = "com.mysql.jdbc.Driver";
-	    String url = "jdbc:mysql://localhost/m2l?autoReconnect=true&useSSL=false"; 
+		//String myDriver = "com.mysql.jdbc.Driver";
+	     
 	    try {
 	    	if(conn==null){
-			 conn = DriverManager.getConnection(url,"root","root");
+			 conn = DriverManager.getConnection(url,log,mdp);
 	    	}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -29,7 +31,7 @@ public class BDDConnexion {
 
 	}
 
-	public static void  select(){
+/*	public static void  select(){
 		 connexionBD();
 		try { 
 	    Statement st = conn.createStatement();
@@ -63,12 +65,7 @@ public class BDDConnexion {
 		}
 			
 		}
-	
-	public static void  Modifier(){
-		
-		 select();
-		
-	}
+	*/
 	
 }
 

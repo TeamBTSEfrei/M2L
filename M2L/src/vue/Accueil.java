@@ -1,25 +1,30 @@
 package vue;
 
-import java.awt.BorderLayout;
+
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class Accueil extends JFrame{
-	
+
 	private static final long serialVersionUID = 1L;
 
 	public Accueil(){
+		
+
 		this.setTitle("Acceuil M2L");
 	    this.setSize(1920, 1080);
 	    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    this.setLocationRelativeTo(null);
 	    JPanel accueil = new JPanel();
 	    JButton M2L = new JButton();
+	    JButton logo = new JButton(new ImageIcon("m2l.png"));
 	    JButton louer = new JButton();
 	    JButton creer = new JButton();
 	    JButton connecter = new JButton();
@@ -35,6 +40,16 @@ public class Accueil extends JFrame{
 	    accueil.add(connecter);
 	    accueil.add(admin);
 	    accueil.add(quitter);
+	    
+	    logo.setText("Maison des ligue de Lorraine");
+	    
+	    logo.setBounds(100, 50, 1200, 200);
+	    logo.addActionListener(new ActionListener(){
+	    	public void actionPerformed(ActionEvent e){
+
+	    	
+	    	}
+	    });
 	    
 	    M2L.setText("Maison des ligue de Lorraine");
 	    M2L.setFont(new Font("Arial", Font.PLAIN, 30));
@@ -108,8 +123,10 @@ public class Accueil extends JFrame{
 	    
 	    	}
 	    });
+	
 	    this.setVisible(true);
 	  }    
 
+ 
 
 }

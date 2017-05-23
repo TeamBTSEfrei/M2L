@@ -5,9 +5,9 @@ import java.sql.Statement;
 
 public class modeleBatiment {
 	
-public static void select(){
+public static SQLBatiment select(){
 		
-		SQLUtilisateur[] user_list;
+		SQLBatiment batiment =new SQLBatiment();
 	    
 		BDDConnexion.connexionBD();
 		try { 
@@ -21,36 +21,22 @@ public static void select(){
 
 	    while (rs.next())
 	    {
-	    	
-	    	SQLUtilisateur.setNum_user(rs.getInt("Num_User"));
-		    SQLUtilisateur.setNom(rs.getString("Nom_User"));
-		    SQLUtilisateur.setPrenom(rs.getString("Prenom_User"));
-		    SQLUtilisateur.setAdresse(rs.getString("Adresse"));
-		    SQLUtilisateur.setEmail(rs.getString("Email"));
-		    SQLUtilisateur.setTel(rs.getInt("Telephone"));
-		    SQLUtilisateur.setMdp(rs.getString("Mdp"));
+	    	batiment.setNum_Bat(rs.getInt("Num_User"));
+	    	batiment.setNom_Bat(rs.getString("Nom_User"));
+
 	      
 	      // print the results
-	      System.out.println(
-	    		  "Num_User " + SQLUtilisateur.getNum_user() + 
-	    		  ", Nom " + SQLUtilisateur.getNom() +
-	    		  ", Prenom " + SQLUtilisateur.getPrenom() +
-	    		  ", Address " + SQLUtilisateur.getAdresse() + 
-	      		  " ,Email " + SQLUtilisateur.getEmail() +
-	      		  " ,Telephone " + SQLUtilisateur.getTel() +
-	      		  " ,Mdp " + SQLUtilisateur.getMdp()
-	      )
-	      ;
+	      System.out.println("Num_User "+batiment.getNum_Bat() +", Nom "+batiment.getNom_Bat());
 	    }
 	    st.close();
 	    rs.close();
 	    BDDConnexion.conn.close();
 	    
 		} catch (Exception e) { 
-		    System.err.println("Selection echouée "); 
+		    System.err.println("Selection echouée: modeleBatiment "); 
 		    System.err.println(e.getMessage()); 
 		}
-			
+		return batiment;	
 	}
 	
 

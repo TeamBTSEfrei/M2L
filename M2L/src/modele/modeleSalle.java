@@ -6,9 +6,9 @@ import java.sql.Statement;
 public class modeleSalle {
 	
 	
-	public static void select(){
+	public static SQLSalle select(){
 		
-		SQLUtilisateur[] user_list;
+		SQLSalle salle = new SQLSalle();
 	    
 		BDDConnexion.connexionBD();
 		try { 
@@ -23,19 +23,19 @@ public class modeleSalle {
 	    while (rs.next())
 	    {
 	    	
-	    	SQLSalle.setNum_salle(rs.getInt("Num_Salle"));
-	    	SQLSalle.setNum_bat(rs.getInt("Num_Bat"));
-	    	SQLSalle.setEtage(rs.getInt("Etage"));
-	    	SQLSalle.setNom_salle(rs.getString("Nom_Salle"));
-	    	SQLSalle.setPlaces(rs.getInt("Places"));
+	    	salle.setNum_salle(rs.getInt("Num_Salle"));
+	    	salle.setNum_bat(rs.getInt("Num_Bat"));
+	    	salle.setEtage(rs.getInt("Etage"));
+	    	salle.setNom_salle(rs.getString("Nom_Salle"));
+	    	salle.setPlaces(rs.getInt("Places"));
 	      
 	      // print the results
 	      System.out.println(
-	    		  "Num_Salle " + SQLSalle.getNum_salle() + 
-	    		  ", Nom_Bat " + SQLSalle.getNum_bat() +
-	    		  ", Etage " + SQLSalle.getEtage() +
-	    		  ", Nom_Salle " + SQLSalle.getNom_salle() + 
-	      		  " ,Places " + SQLSalle.getPlaces() 
+	    		  "Num_Salle " + salle.getNum_salle() + 
+	    		  ", Nom_Bat " + salle.getNum_bat() +
+	    		  ", Etage " + salle.getEtage() +
+	    		  ", Nom_Salle " + salle.getNom_salle() + 
+	      		  " ,Places " + salle.getPlaces() 
 	      )
 	      ;
 	    }
@@ -47,7 +47,7 @@ public class modeleSalle {
 		    System.err.println("Selection echouée "); 
 		    System.err.println(e.getMessage()); 
 		}
-			
+		return salle;
 	}
 
 }
