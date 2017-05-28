@@ -1,5 +1,7 @@
 package vue;
 
+import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -9,6 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
 import modele.SQLUtilisateur;
@@ -160,7 +163,6 @@ public class Inscription extends JFrame{
     			});
     	
 
-		this.setContentPane(contenuFenêtre);
 
 		// Positionne les dimensions et rend la fenêtre visible
 		this.setSize(1920, 1080);

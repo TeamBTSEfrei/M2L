@@ -2,12 +2,13 @@ package modele;
 
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 public class modeleBatiment {
 	
-public static SQLBatiment select(){
-		
+public static ArrayList<SQLBatiment> select(){
 		SQLBatiment batiment =new SQLBatiment();
+		ArrayList<SQLBatiment> batimentL =new ArrayList<SQLBatiment>();
 	    
 		BDDConnexion.connexionBD();
 		try { 
@@ -23,10 +24,10 @@ public static SQLBatiment select(){
 	    {
 	    	batiment.setNum_Bat(rs.getInt("Num_User"));
 	    	batiment.setNom_Bat(rs.getString("Nom_User"));
-
+	    	batimentL.add(batiment);
 	      
 	      // print the results
-	      System.out.println("Num_User "+batiment.getNum_Bat() +", Nom "+batiment.getNom_Bat());
+	    	
 	    }
 	    st.close();
 	    rs.close();
@@ -36,7 +37,7 @@ public static SQLBatiment select(){
 		    System.err.println("Selection echouée: modeleBatiment "); 
 		    System.err.println(e.getMessage()); 
 		}
-		return batiment;	
+		return batimentL;
 	}
 	
 

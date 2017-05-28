@@ -5,11 +5,14 @@ import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Date;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
+import modele.SQLReservation;
 
 public class Accueil extends JFrame{
 
@@ -22,6 +25,7 @@ public class Accueil extends JFrame{
 	    this.setSize(1920, 1080);
 	    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    this.setLocationRelativeTo(null);
+	    
 	    JPanel accueil = new JPanel();
 	    JButton M2L = new JButton();
 	    JButton logo = new JButton(new ImageIcon("m2l.png"));
@@ -30,6 +34,7 @@ public class Accueil extends JFrame{
 	    JButton connecter = new JButton();
 	    JButton admin = new JButton();
 	    JButton quitter= new JButton();
+	    JButton compte= new JButton();
 
 	    accueil.setLayout(null);
 	    
@@ -40,7 +45,7 @@ public class Accueil extends JFrame{
 	    accueil.add(connecter);
 	    accueil.add(admin);
 	    accueil.add(quitter);
-	    
+	    accueil.add(compte);
 	    logo.setText("Maison des ligue de Lorraine");
 	    
 	    logo.setBounds(100, 50, 1200, 200);
@@ -124,6 +129,31 @@ public class Accueil extends JFrame{
 	    	}
 	    });
 	
+	    
+	    
+	    compte.setText("Mon compte");
+	    compte.setFont(new Font("Arial", Font.PLAIN, 30));
+	    compte.setBounds(1300, 200, 400, 100);
+	    compte.addActionListener(new ActionListener(){
+	    	public void actionPerformed(ActionEvent e){
+	    		Date date = new Date();
+	    		SQLReservation reserv=new SQLReservation();
+	    		reserv.setNum_res(1);
+	    		reserv.setNum_user(1);
+	    		reserv.setNum_bat(1);
+	    		reserv.setEtage(1);
+	    		reserv.setNum_salle(1);
+	    		reserv.setNomUser("Boufkhed");
+	    		reserv.setPrenomUser("Saïd");
+	    		reserv.setNomSalle("Galilée");
+	    		reserv.setNomBatiment("A");
+	    		 monCompte compte=new monCompte(reserv);
+	    		dispose();
+	            //other.myMethod();	    
+	    
+	    	}
+	    });
+	    
 	    this.setVisible(true);
 	  }    
 

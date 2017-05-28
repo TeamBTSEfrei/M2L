@@ -2,13 +2,14 @@ package modele;
 
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 public class modeleReservation {
 	
-	public static SQLReservation select(){
+	public static ArrayList<SQLReservation> select(){
 		
 		SQLReservation reservation=new SQLReservation();
-	    
+	    ArrayList<SQLReservation> reservationL = new ArrayList<SQLReservation>();
 		BDDConnexion.connexionBD();
 		try { 
 	    Statement st = BDDConnexion.conn.createStatement();
@@ -28,7 +29,7 @@ public class modeleReservation {
 	    	reservation.setEtage(rs.getInt("Etage"));
 	    	reservation.setNum_salle(rs.getInt("Num_salle"));
 	    	reservation.setDate(rs.getDate("Date"));
-
+	    	reservationL.add(reservation);
 	      
 	      // print the results
 	      System.out.println(
@@ -47,6 +48,6 @@ public class modeleReservation {
 		    System.err.println("Selection echouée "); 
 		    System.err.println(e.getMessage()); 
 		}
-		return reservation;
+		return reservationL;
 	}
 }
