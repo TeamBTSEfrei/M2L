@@ -35,13 +35,12 @@ public class Calendrier extends JPanel{
 	    b1.add(entrée2);
 	    valider.addActionListener(new ActionListener(){
 		     public void actionPerformed(ActionEvent e){ 
-		    	 
 		    	 date1 = c.getCalendar().getTime();
 		    	 Locale locale = Locale.getDefault();
 		    	 String formatted = format1.format(date1.getTime());
 		    	 DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.FULL, locale);
 		    	 entrée2.setText(dateFormat.format(date1));
-		    	 Calendrier.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		    	 datesql=java.sql.Date.valueOf(formatted);
 		     }
 		    });
 	    		

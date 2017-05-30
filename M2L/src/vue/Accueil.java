@@ -15,7 +15,7 @@ import javax.swing.JPanel;
 import modele.SQLReservation;
 
 public class Accueil extends JFrame{
-
+	public static boolean connect=false;
 	private static final long serialVersionUID = 1L;
 
 	public Accueil(){
@@ -42,7 +42,6 @@ public class Accueil extends JFrame{
 	    accueil.add(M2L);
 	    accueil.add(louer);
 	    accueil.add(creer);
-	    accueil.add(connecter);
 	    accueil.add(admin);
 	    accueil.add(quitter);
 	    accueil.add(compte);
@@ -90,20 +89,51 @@ public class Accueil extends JFrame{
 	    });
 	    
 	    
-	    
+
 	    connecter.setText("Se connecter");
 	    connecter.setFont(new Font("Arial", Font.PLAIN, 30));
 	    connecter.setBounds(1300, 300, 400, 100);
 	    connecter.addActionListener(new ActionListener(){
 	    	public void actionPerformed(ActionEvent e){
-	    		Arbo_App arbo=new Arbo_App();
+	    		Connexion conn=new Connexion();
+	    		connect=true;
 	    		dispose();
 	            //other.myMethod();	    
 	    
 	    	}
 	    });
-	     
+	    compte.setText("Mon compte");
+	    compte.setFont(new Font("Arial", Font.PLAIN, 30));
+	    compte.setBounds(1300, 300, 400, 100);
+	    compte.addActionListener(new ActionListener(){
+	    	public void actionPerformed(ActionEvent e){
+	    		Date date = new Date();
+	    		SQLReservation reserv=new SQLReservation();
+	    		reserv.setNum_res(1);
+	    		reserv.setNum_user(1);
+	    		reserv.setNum_bat(1);
+	    		reserv.setEtage(1);
+	    		reserv.setNum_salle(1);
+	    		reserv.setNomUser("Boufkhed");
+	    		reserv.setPrenomUser("Saïd");
+	    		reserv.setNomSalle("Galilée");
+	    		reserv.setNomBatiment("A");
+	    		monCompte compte=new monCompte(reserv);
+	    		dispose();
+	            //other.myMethod();	    
 	    
+	    	}
+	    }); 
+	    if (connect){
+	    	accueil.remove(connecter);
+	    	accueil.add(compte);
+	    	
+	    }
+	    else{
+	    	accueil.remove(compte);
+	    	accueil.add(connecter);
+
+	    }
 	   
 	    admin.setText("Zone Administrateur");
 	    admin.setFont(new Font("Arial", Font.PLAIN, 30));
@@ -131,28 +161,7 @@ public class Accueil extends JFrame{
 	
 	    
 	    
-	    compte.setText("Mon compte");
-	    compte.setFont(new Font("Arial", Font.PLAIN, 30));
-	    compte.setBounds(1300, 200, 400, 100);
-	    compte.addActionListener(new ActionListener(){
-	    	public void actionPerformed(ActionEvent e){
-	    		Date date = new Date();
-	    		SQLReservation reserv=new SQLReservation();
-	    		reserv.setNum_res(1);
-	    		reserv.setNum_user(1);
-	    		reserv.setNum_bat(1);
-	    		reserv.setEtage(1);
-	    		reserv.setNum_salle(1);
-	    		reserv.setNomUser("Boufkhed");
-	    		reserv.setPrenomUser("Saïd");
-	    		reserv.setNomSalle("Galilée");
-	    		reserv.setNomBatiment("A");
-	    		 monCompte compte=new monCompte(reserv);
-	    		dispose();
-	            //other.myMethod();	    
-	    
-	    	}
-	    });
+
 	    
 	    this.setVisible(true);
 	  }    

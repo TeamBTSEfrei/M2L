@@ -7,11 +7,9 @@ import javax.swing.JOptionPane;
 
 public class Validation{
 
-     public void Validation(String message){
+     public static void Validation(String message){
 
-    JOptionPane jop1;    
-
-    jop1 = new JOptionPane();
+ 
 
     ImageIcon img = new ImageIcon("images/information.png");
 

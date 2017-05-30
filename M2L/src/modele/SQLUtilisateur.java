@@ -9,7 +9,14 @@ public class SQLUtilisateur {
 	private  String email;
 	private  int tel;
 	private  String mdp;
+	private boolean superUser;
 	
+	public boolean isSuperUser() {
+		return superUser;
+	}
+	public void setSuperUser(boolean superUser) {
+		this.superUser = superUser;
+	}
 	public  int getNum_user() {
 		return this.num_user;
 	}

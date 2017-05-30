@@ -10,7 +10,7 @@ public class SQLReservation {
 	private String prenomUser=new String();
 	private String nomBatiment=new String();
 	private String nomSalle=new String();
-	private int num_bat ;
+	private int num_bat;
 	private int etage ;
 	private int num_salle;
 	private Date date ;
@@ -122,7 +122,8 @@ public class SQLReservation {
 		return date;
 	}
 	public String getTxtDate(){
-		datetxt=date.toString();
+		Date date1 =this.getDate();
+		datetxt=date1.toString();
 		return datetxt;
 	}
 }
