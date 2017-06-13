@@ -8,7 +8,7 @@ public class modeleBatiment {
 	
 public static ArrayList<SQLBatiment> select(){
 		SQLBatiment batiment =new SQLBatiment();
-		ArrayList<SQLBatiment> batimentL =new ArrayList<SQLBatiment>();
+		ArrayList<SQLBatiment> batimentList =new ArrayList<SQLBatiment>();
 	    
 		BDDConnexion.connexionBD();
 		try { 
@@ -24,7 +24,7 @@ public static ArrayList<SQLBatiment> select(){
 	    {
 	    	batiment.setNum_Bat(rs.getInt("Num_User"));
 	    	batiment.setNom_Bat(rs.getString("Nom_User"));
-	    	batimentL.add(batiment);
+	    	batimentList.add(batiment);
 	      
 	      // print the results
 	    	
@@ -37,7 +37,7 @@ public static ArrayList<SQLBatiment> select(){
 		    System.err.println("Selection echouée: modeleBatiment "); 
 		    System.err.println(e.getMessage()); 
 		}
-		return batimentL;
+		return batimentList;
 	}
 	
 

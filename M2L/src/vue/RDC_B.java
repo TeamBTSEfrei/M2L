@@ -76,7 +76,7 @@ public RDC_B(){
 	    S_Lamour.addActionListener(new ActionListener(){
 		     public void actionPerformed(ActionEvent e){
 
-		    	 new Reservation("B01");
+		    	 new Reservation(201);
 	
 		     }
 		    });
@@ -84,7 +84,7 @@ public RDC_B(){
 	    Amphi.addActionListener(new ActionListener(){
 		     public void actionPerformed(ActionEvent e){
 
-		    	 new Reservation("B02");
+		    	 new Reservation(202);
 	
 		     }
 		    });
@@ -92,7 +92,7 @@ public RDC_B(){
 	    service.addActionListener(new ActionListener(){
 		     public void actionPerformed(ActionEvent e){
 
-		    	 new Reservation("B03");
+		    	 new Reservation(203);
 	
 		     }
 		    });
@@ -100,7 +100,7 @@ public RDC_B(){
 	    S_Multi.addActionListener(new ActionListener(){
 		     public void actionPerformed(ActionEvent e){
 
-		    	 new Reservation("B04");
+		    	 new Reservation(204);
 	
 		     }
 		    });
@@ -108,7 +108,7 @@ public RDC_B(){
 	    S_Longwy.addActionListener(new ActionListener(){
 		     public void actionPerformed(ActionEvent e){
 
-		    	 new Reservation("B05");
+		    	 new Reservation(205);
 	
 		     }
 		    });

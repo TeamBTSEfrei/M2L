@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 
 public class Validation{
 
-     public static void Validation(String message){
+     public void Valid(String message){
 
  
 

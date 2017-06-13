@@ -17,5 +17,6 @@ public class SQLBatiment {
 	public void setNom_Bat(String nom_Bat) {
 		this.nom_bat = nom_Bat;
 	}
-
+	
+	
 }

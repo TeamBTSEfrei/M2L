@@ -107,7 +107,6 @@ public class Accueil extends JFrame{
 	    compte.setBounds(1300, 300, 400, 100);
 	    compte.addActionListener(new ActionListener(){
 	    	public void actionPerformed(ActionEvent e){
-	    		Date date = new Date();
 	    		SQLReservation reserv=new SQLReservation();
 	    		reserv.setNum_res(1);
 	    		reserv.setNum_user(1);
@@ -118,6 +117,7 @@ public class Accueil extends JFrame{
 	    		reserv.setPrenomUser("Saïd");
 	    		reserv.setNomSalle("Galilée");
 	    		reserv.setNomBatiment("A");
+	    		
 	    		monCompte compte=new monCompte(reserv);
 	    		dispose();
 	            //other.myMethod();	    
@@ -132,7 +132,6 @@ public class Accueil extends JFrame{
 	    else{
 	    	accueil.remove(compte);
 	    	accueil.add(connecter);
-
 	    }
 	   
 	    admin.setText("Zone Administrateur");

@@ -10,7 +10,7 @@ public class BDDConnexion {
 	private static String log ="root";
 	private static String mdp ="root";
 	
-	public BDDConnexion(){
+	public BDDConnexion(String url,String log,String mdp){
 		
 		
 	};

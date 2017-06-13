@@ -125,7 +125,7 @@ public class monCompte extends JFrame {
 		    	 a=("vos nouvelles information:\n Batiment :"+reserv.getNomBatiment()+"\nSalle: "+reserv.getNomSalle()+"\nDate de réservation:"+dateReservation.getText());
 		    	 reserv.getDate();
 		    	 System.out.println(a);
-		    	 valid.Validation("Vos modifications ont ete pris en compte");
+		    	 valid.Valid("Vos modifications ont ete pris en compte");
 		    	 
 		     }
 		    });
@@ -163,7 +163,7 @@ public class monCompte extends JFrame {
 		this.setVisible(true);
 	}
 	  public static void main(String[] args){
-		  Date date = new Date();
+		  java.util.Date date = new java.util.Date();
 		  SQLReservation reserv=new SQLReservation();
 		  reserv.setNum_res(1);
 		  reserv.setNum_user(1);

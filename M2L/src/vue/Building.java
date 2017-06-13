@@ -89,14 +89,16 @@ public Building(){
     b1.add(returne);
     returne.setText("retour");
     returne.setBounds(100, 800, 100, 100);
+    
     returne.addActionListener(new ActionListener(){
      public void actionPerformed(ActionEvent e){
-      Accueil accueil;
+      Accueil accueil=new Accueil();
       dispose();
             //other.myMethod();
      }
     });
 
+    
     bat_H.setBackground(Color.blue);
     
     this.getContentPane().add(b1);

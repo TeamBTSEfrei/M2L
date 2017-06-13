@@ -3,23 +3,33 @@ package modele;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import com.mysql.jdbc.Connection;
+
+import vue.mainClass;
 
 
 public class modeleUtilisateur {
 	
 	public static void main(String[] args){
-			select();
+		
+		ArrayList<SQLUtilisateur> tousLesAbonnes = select(mainClass.getTousLesAbonnes());
+			System.out.println("|Numéro Utilisateur   |    Nom   |    Prenom    |               Address            |    Email     |     Telephone    |     Mdp    |    SuperUser   |"); 
+			for(SQLUtilisateur abonne :tousLesAbonnes)
+			{
+				System.out.println("|   "+abonne.getNum_user() +"  |  "+abonne.getNom()+"  |  "+abonne.getPrenom()+"  |  "+abonne.getAdresse()+"  |  "+abonne.getEmail()+"  |  "+abonne.getTel()+"  |  "+abonne.getMdp());
+				
+				
+				
+			}
 	}
 	
 	static int i=0;
 	
 	
-	public static SQLUtilisateur select(){
-		
-		SQLUtilisateur user = new SQLUtilisateur();
-	    
+	public static ArrayList<SQLUtilisateur> select(ArrayList<SQLUtilisateur> listDAbonnes){
+
 		BDDConnexion.connexionBD();
 		try { 
 	    Statement st = BDDConnexion.conn.createStatement();
@@ -32,42 +42,32 @@ public class modeleUtilisateur {
 
 	    while (rs.next())
 	    {
-	    	
-	    	user.setNum_user(rs.getInt("Num_User"));
-	    	user.setNom(rs.getString("Nom_User"));
-	    	user.setPrenom(rs.getString("Prenom_User"));
-	    	user.setAdresse(rs.getString("Adresse"));
-	    	user.setEmail(rs.getString("Email"));
-	    	user.setTel(rs.getInt("Telephone"));
-	    	user.setMdp(rs.getString("Mdp"));
-	      
-	      // print the results
-	      System.out.println(
-	    		  "Num_User " + user.getNum_user() + 
-	    		  ", Nom " + user.getNom() +
-	    		  ", Prenom " + user.getPrenom() +
-	    		  ", Address " + user.getAdresse() + 
-	      		  " ,Email " + user.getEmail() +
-	      		  " ,Telephone " + user.getTel() +
-	      		  " ,Mdp " + user.getMdp()
-	      )
+	    	SQLUtilisateur user=new SQLUtilisateur();
+	    			user.setNum_user(rs.getInt("Num_User"));
+	    			user.setNom(rs.getString("Nom_User"));
+	    			user.setPrenom(rs.getString("Prenom_User"));
+	    			user.setAdresse(rs.getString("Adresse"));
+	    			user.setEmail(rs.getString("Email"));
+	    			user.setTel(rs.getInt("Telephone"));
+	    			user.setMdp(rs.getString("Mdp"));
+	    			user.setSuperUser(rs.getBoolean("SuperUser"));
+	    			listDAbonnes.add(user);
 	      ;
 	    }
 	    st.close();
 	    rs.close();
 	    BDDConnexion.conn.close();
-	    
 		} catch (Exception e) { 
 		    System.err.println("Selection echouée "); 
 		    System.err.println(e.getMessage()); 
 		}
-		return user;
+		return listDAbonnes;
 			
 	}
 	
-	public static void insert_user(){
+	public static void insert_user(SQLUtilisateur user){
+		
 		BDDConnexion.connexionBD();
-		SQLUtilisateur user = new SQLUtilisateur();
 		try { 
 		//	String myDriver = "com.mysql.jdbc.Driver";
             String url = "jdbc:mysql://localhost/m2l?autoReconnect=true&useSSL=false"; 

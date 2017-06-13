@@ -4,6 +4,7 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -71,11 +72,7 @@ public class Connexion extends JFrame{
 		valider.addActionListener(new ActionListener(){
  	    	public void actionPerformed(ActionEvent e){
 
- 	    	controlConnexion.user(entre_email.getText(), entre_mdp.getText());
- 	    		
- 	    		
- 	    	}
-    	});
+ 	    	controlConnexion.validUser(mainClass.getTousLesAbonnes(),entre_email.getText(), entre_mdp.getText());}});
     	
 
 		this.setContentPane(contenuFenêtre);
@@ -92,4 +89,4 @@ public class Connexion extends JFrame{
 		
 		
 	}
-					}
+}

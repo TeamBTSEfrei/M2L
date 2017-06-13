@@ -1,6 +1,6 @@
 package modele;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class SQLReservation {
 	
@@ -16,7 +16,20 @@ public class SQLReservation {
 	private Date date ;
 	private String datetxt;
 	
-	
+	/*public SQLReservation(int num_res,int num_user,String nomUser,String prenomUser,String nomBatiment,String nomSalle,int num_bat,int etage,int num_salle,Date date)
+	{
+		this.setNum_res(num_res);
+		this.setNum_user(num_user);				
+		this.setNomUser(nomUser);
+		this.setPrenomUser(prenomUser);
+		this.setNomBatiment(nomBatiment);
+		this.setNomSalle(nomSalle);
+		this.setNum_bat(num_bat);
+		this.setEtage(etage);
+		this.setNum_salle(num_salle);
+		this.setDate(date);
+		
+	}*/
 	
 	public String getNomUser() {
 		return nomUser;
@@ -122,7 +135,7 @@ public class SQLReservation {
 		return date;
 	}
 	public String getTxtDate(){
-		Date date1 =this.getDate();
+		Date date1 = this.getDate();
 		datetxt=date1.toString();
 		return datetxt;
 	}

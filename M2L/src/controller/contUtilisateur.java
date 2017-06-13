@@ -13,7 +13,7 @@ public class contUtilisateur extends modeleUtilisateur{
 	static String test;
 	static int i=0;
 
-	SQLUtilisateur gs = new SQLUtilisateur();
+	static SQLUtilisateur gs = new SQLUtilisateur();
 	
 	public static void selectInfo(){
 		 BDDConnexion.connexionBD();
@@ -27,16 +27,16 @@ public class contUtilisateur extends modeleUtilisateur{
 	    
 	    // iterate through the java resultset
 	   while (rs.next())
-	    {int num_user = rs.getInt("Num_User");
-	      test=rs.getString("Nom_User");
-	      
-	      String prenom = rs.getString("Prenom_User");
-	      String adresse = rs.getString("Adresse");
-	      String email = rs.getString("Email");
-	      int tel = rs.getInt("Telephone");
-
+	    {
+		   gs.setNum_user(rs.getInt("Num_User"));
+		   gs.setNom(rs.getString("Nom_User"));
+		   gs.setPrenom(rs.getString("Prenom_User"));
+		   gs.setAdresse(rs.getString("Adresse"));
+		   gs.setEmail(rs.getString("Email"));
+		   gs.setTel(rs.getInt("Telephone"));
+		   user_list.add(gs);
 	    }
-	   System.out.println(SQLUtilisateur.getNom());
+	   System.out.println(gs.getNom());
 	    st.close();
 	    rs.close();
 	    BDDConnexion.conn.close();
@@ -46,13 +46,8 @@ public class contUtilisateur extends modeleUtilisateur{
 		    System.err.println(e.getMessage()); 
 		}
 		System.out.println(test);
-			
 	}
 	
-	private static String nom = SQLUtilisateur.getNom();
-	public void setNom(String nom) {
-		this.nom  = test;
-		
-	}
+	
 
 }

@@ -69,7 +69,10 @@ public class SQLUtilisateur {
 	public  void setMdp(String mdp) {
 		this.mdp = mdp;
 	}
-	
-	
+	public static void SQLutilisateurShow(SQLUtilisateur user){
+		System.out.println("|ID: "+user.getNum_user()+ " |Nom: " +user.getNom()+" |Prenom: "+user.getPrenom()+ " |email: " +user.getEmail()+" |telephone: "+user.getTel()+" |Adresse: "+user.getAdresse());
+		
+		
+	}
 
 }

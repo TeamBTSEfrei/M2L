@@ -12,6 +12,11 @@ import javax.swing.*;
 public class Utilisateur extends JFrame{
 	
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4809684658899705401L;
+
 	public Utilisateur(){
 		
 	    this.setTitle("Accueil Maison des Ligues de Lorraine");
@@ -22,7 +27,7 @@ public class Utilisateur extends JFrame{
 	    JPanel b1 = new JPanel();
 	    b1.setLayout(null);
 	    
-	    Font font_button = new Font("Arial", Font.PLAIN, 35);
+	    
 	    Font font_title = new Font("Arial", Font.PLAIN, 35);
 	    
 	    JLabel titre = new JLabel("Bonjour ");

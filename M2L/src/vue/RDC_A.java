@@ -83,6 +83,7 @@ public class RDC_A extends JFrame{
 		     public void actionPerformed(ActionEvent e){ 
 		     Building building = new Building();
 		     dispose();
+		     
 		            //other.myMethod();
 		     }
 		    });
@@ -105,28 +106,28 @@ public class RDC_A extends JFrame{
 		    });
 	    S_Daum.addActionListener(new ActionListener(){
 		     public void actionPerformed(ActionEvent e){
-		    	 new Reservation("A01");
+		    	 new Reservation(101);
 	
 		     }
 		    });
 	    S_Galle.addActionListener(new ActionListener(){
 		     public void actionPerformed(ActionEvent e){
 
-		    	 new Reservation("A02");
+		    	 new Reservation(102);
 	
 		     }
 		    });
 	    S_Corbin.addActionListener(new ActionListener(){
 		     public void actionPerformed(ActionEvent e){
 
-		    	 new Reservation("A03");
+		    	 new Reservation(103);
 	
 		     }
 		    });
 	    S_Baccarat.addActionListener(new ActionListener(){
 		     public void actionPerformed(ActionEvent e){
 
-		    	 new Reservation("A04");
+		    	 new Reservation(104);
 	
 		     }
 		    });

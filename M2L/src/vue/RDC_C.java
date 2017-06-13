@@ -61,14 +61,14 @@ public class RDC_C extends JFrame{
 	    S_Gruber.addActionListener(new ActionListener(){
 		     public void actionPerformed(ActionEvent e){
 
-		    	 new Reservation("C01");
+		    	 new Reservation(301);
 	
 		     }
 		    });
 	    Adm_MDL.addActionListener(new ActionListener(){
 		     public void actionPerformed(ActionEvent e){
 
-		    	 new Reservation("C02");
+		    	 new Reservation(302);
 	
 		     }
 		    });

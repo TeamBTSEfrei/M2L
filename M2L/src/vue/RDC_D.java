@@ -67,28 +67,28 @@ public class RDC_D extends JFrame{
 	    S_Majorelle.addActionListener(new ActionListener(){
 		     public void actionPerformed(ActionEvent e){
 
-		    	 new Reservation("D01");
+		    	 new Reservation(401);
 	
 		     }
 		    });
 	    Cuisine.addActionListener(new ActionListener(){
 		     public void actionPerformed(ActionEvent e){
 
-		    	 new Reservation("D02");
+		    	 new Reservation(402);
 	
 		     }
 		    });
 	    S_Restau.addActionListener(new ActionListener(){
 		     public void actionPerformed(ActionEvent e){
 
-		    	 new Reservation("D03");
+		    	 new Reservation(403);
 	
 		     }
 		    });
 	    Reprographie.addActionListener(new ActionListener(){
 		     public void actionPerformed(ActionEvent e){
 
-		    	 new Reservation("D04");
+		    	 new Reservation(404);
 	
 		     }
 		    });
