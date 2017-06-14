@@ -4,15 +4,14 @@ import javax.swing.*;
 
 import modele.SQLReservation;
 
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.Date;
-import java.sql.*;
-import java.text.DateFormat;
+
 import java.text.SimpleDateFormat;
  
 public class monCompte extends JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public static boolean datechanger = false;
 	public int rese=3;
 	static java.sql.Date date=null;

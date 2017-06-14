@@ -12,7 +12,12 @@ import com.tutorialspoint.gui.Test;
 
 public class Test extends Frame {
     
-	   public Test(){
+	   /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public Test(){
 	      super("Java AWT Examples");
 	      prepareGUI();
 	   }

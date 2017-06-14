@@ -29,7 +29,7 @@ public Building(){
     bat_A.setBounds(720, 350, 400, 100);
     bat_A.addActionListener(new ActionListener(){
     	public void actionPerformed(ActionEvent e){
-    		RDC_A rdc = new RDC_A() ;
+    		new RDC_A().setVisible(true) ;
     		dispose();
             //other.myMethod();
     	}
@@ -42,7 +42,7 @@ public Building(){
     bat_B.setBounds(450, 50, 400, 300);
     bat_B.addActionListener(new ActionListener(){
     	public void actionPerformed(ActionEvent e){
-    		RDC_B rdc = new RDC_B();
+    		new RDC_B().setVisible(true);
     		dispose();
             //other.myMethod();
     	}
@@ -56,7 +56,7 @@ public Building(){
     bat_C.setBounds(80, 350, 370, 100);
     bat_C.addActionListener(new ActionListener(){
     	public void actionPerformed(ActionEvent e){
-    		RDC_C rdc = new RDC_C();
+    		new RDC_C().setVisible(true);
     		dispose();
             //other.myMethod();
     	}
@@ -70,7 +70,7 @@ public Building(){
     bat_D.setBounds(100, 50, 200, 300);
     bat_D.addActionListener(new ActionListener(){
     	public void actionPerformed(ActionEvent e){
-    		RDC_D rdc = new RDC_D();
+    		new RDC_D().setVisible(true);
     		dispose();
             //other.myMethod();
     	}
@@ -92,7 +92,7 @@ public Building(){
     
     returne.addActionListener(new ActionListener(){
      public void actionPerformed(ActionEvent e){
-      Accueil accueil=new Accueil();
+     new Accueil().setVisible(true);
       dispose();
             //other.myMethod();
      }

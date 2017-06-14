@@ -46,7 +46,7 @@ public class RDC_C extends JFrame{
 	    
 	    returne.addActionListener(new ActionListener(){
 	     public void actionPerformed(ActionEvent e){
-	      Building building = new Building();
+	     new Building().setVisible(true);
 	      dispose();
 	            //other.myMethod();
 	     }
@@ -62,14 +62,14 @@ public class RDC_C extends JFrame{
 		     public void actionPerformed(ActionEvent e){
 
 		    	 new Reservation(301);
-	
+		    	 dispose();
 		     }
 		    });
 	    Adm_MDL.addActionListener(new ActionListener(){
 		     public void actionPerformed(ActionEvent e){
 
 		    	 new Reservation(302);
-	
+		    	 dispose();
 		     }
 		    });
 	    JScrollPane _ScrollPane = new JScrollPane(b1);

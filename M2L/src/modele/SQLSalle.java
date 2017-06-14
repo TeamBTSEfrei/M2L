@@ -70,90 +70,105 @@ public class SQLSalle {
 		salA1.setEtage(1);
 		salA1.setNom_salle("Salle Daume");
 		salA1.setPlaces(30);
+		salA1.setNum_bat(1);
 		
 		SQLSalle salA2=new SQLSalle();
 		salA2.setNum_salle(102);
 		salA2.setEtage(1);
 		salA2.setNom_salle("Salle Gallé");
 		salA2.setPlaces(30);
+		salA2.setNum_bat(1);
 		
 		SQLSalle salA3=new SQLSalle();
 		salA3.setNum_salle(103);
 		salA3.setEtage(1);
 		salA3.setNom_salle("Salle Corbine");
 		salA3.setPlaces(30);
+		salA3.setNum_bat(1);
 		
 		SQLSalle salA4=new SQLSalle();
 		salA4.setNum_salle(104);
 		salA4.setEtage(1);
 		salA4.setNom_salle("Salle Baccarate");
 		salA4.setPlaces(30);
+		salA4.setNum_bat(1);
 		
 		SQLSalle salB1=new SQLSalle();
 		salB1.setNum_salle(201);
 		salB1.setEtage(1);
 		salB1.setNom_salle("Salle Lamour");
 		salB1.setPlaces(30);
+		salB1.setNum_bat(2);
 		
 		SQLSalle salB2=new SQLSalle();
 		salB2.setNum_salle(202);
 		salB2.setEtage(1);
 		salB2.setNom_salle("Amphithéâtre");
 		salB2.setPlaces(200);
+		salB2.setNum_bat(2);
 		
 		SQLSalle salB3=new SQLSalle();
 		salB3.setNum_salle(203);
 		salB3.setEtage(1);
 		salB3.setNom_salle("Service");
 		salB3.setPlaces(10);
+		salB3.setNum_bat(2);
 		
 		SQLSalle salB4=new SQLSalle();
 		salB4.setNum_salle(204);
 		salB4.setEtage(1);
 		salB4.setNom_salle("Salle Multiplexe");
 		salB4.setPlaces(100);
+		salB4.setNum_bat(2);
 		
 		SQLSalle salB5=new SQLSalle();
 		salB5.setNum_salle(205);
 		salB5.setEtage(1);
 		salB5.setNom_salle("Salle Longwy");
 		salB5.setPlaces(30);
+		salB5.setNum_bat(2);
 		
 		SQLSalle salC1=new SQLSalle();
 		salC1.setNum_salle(301);
 		salC1.setEtage(1);
 		salC1.setNom_salle("Salle Grüber");
 		salC1.setPlaces(30);
+		salC1.setNum_bat(3);
 		
 		SQLSalle salC2=new SQLSalle();
 		salC2.setNum_salle(302);
 		salC2.setEtage(1);
 		salC2.setNom_salle("Administration MDL");
 		salC2.setPlaces(5);
+		salC2.setNum_bat(3);
 		
 		SQLSalle salD1=new SQLSalle();
 		salD1.setNum_salle(401);
 		salD1.setEtage(1);
 		salD1.setNom_salle("Salle Majorelle");
 		salD1.setPlaces(30);
+		salD1.setNum_bat(4);
 		
 		SQLSalle salD2=new SQLSalle();
 		salD2.setNum_salle(402);
 		salD2.setEtage(1);
 		salD2.setNom_salle("Cuisine");
 		salD2.setPlaces(10);
+		salD2.setNum_bat(4);
 		
 		SQLSalle salD3=new SQLSalle();
 		salD3.setNum_salle(403);
 		salD3.setEtage(1);
 		salD3.setNom_salle("Salle Restaurant");
 		salD3.setPlaces(300);
+		salD3.setNum_bat(4);
 		
 		SQLSalle salD4=new SQLSalle();
 		salD4.setNum_salle(404);
 		salD4.setEtage(1);
 		salD4.setNom_salle("Reprographie");
 		salD4.setPlaces(15);
+		salD4.setNum_bat(4);
 		
 		listS.add(salA1);
 		listS.add(salA2);

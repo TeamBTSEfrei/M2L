@@ -12,6 +12,11 @@ import javax.swing.JScrollPane;
 
 public class RDC_B extends JFrame{
 	
+/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 public RDC_B(){
 		
 	    this.setTitle("Rez-de-chaussée B");
@@ -67,7 +72,7 @@ public RDC_B(){
 	    
 	    returne.addActionListener(new ActionListener(){
 	     public void actionPerformed(ActionEvent e){
-	      Building building = new Building();
+	      new Building().setVisible(true);
 	      dispose();
 	            //other.myMethod();
 	     }
@@ -77,7 +82,7 @@ public RDC_B(){
 		     public void actionPerformed(ActionEvent e){
 
 		    	 new Reservation(201);
-	
+		    	 dispose();
 		     }
 		    });
 
@@ -85,7 +90,7 @@ public RDC_B(){
 		     public void actionPerformed(ActionEvent e){
 
 		    	 new Reservation(202);
-	
+		    	 dispose();
 		     }
 		    });
 	    
@@ -93,7 +98,7 @@ public RDC_B(){
 		     public void actionPerformed(ActionEvent e){
 
 		    	 new Reservation(203);
-	
+		    	 dispose();
 		     }
 		    });
 	    
@@ -101,7 +106,7 @@ public RDC_B(){
 		     public void actionPerformed(ActionEvent e){
 
 		    	 new Reservation(204);
-	
+		    	 dispose();
 		     }
 		    });
 	    
@@ -109,7 +114,7 @@ public RDC_B(){
 		     public void actionPerformed(ActionEvent e){
 
 		    	 new Reservation(205);
-	
+		    	 dispose();
 		     }
 		    });
 	    

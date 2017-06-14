@@ -11,25 +11,32 @@ import modele.modeleUtilisateur;
 public final class mainClass {
 	private static ArrayList<SQLUtilisateur> tousLesAbonnes= new ArrayList<SQLUtilisateur>();
 	private static ArrayList<SQLBatiment> batimentList=new ArrayList<SQLBatiment>();
-	private static ArrayList<SQLSalle> SallesList=new ArrayList<SQLSalle>();
+	private static ArrayList<SQLSalle> sallesList=new ArrayList<SQLSalle>();
 	private static SQLUtilisateur userConnected =new SQLUtilisateur();
+	
+	public static int getSizeOfTousLesAbonnes(){
+		return tousLesAbonnes.size();
+		
+	}
+	
+	public static int getSizeOfSallesList(){
+		return sallesList.size();
+		
+	}
+	
+	
+	
+	
+	
+	
+	
 	private static ArrayList<SQLReservation> reservationList=new ArrayList<SQLReservation>();
 	public static ArrayList<SQLSalle> getSallesList() {
-		return SallesList;
-	}
-	public static int compteUsers()
-	{
-		int a=100;
-		for(SQLUtilisateur za:tousLesAbonnes)
-		{
-			a++;
-		}
-		return a;
+		return sallesList;
 	}
 
-	public static void setSallesList(ArrayList<SQLSalle> sallesList) {
-		SallesList = sallesList;
-	}
+
+
 
 	private static String SU="coca";
 	
@@ -89,7 +96,7 @@ public final class mainClass {
 	
 	public static void afficheSalle()
 	{
-		for(SQLSalle salle:SallesList)
+		for(SQLSalle salle:sallesList)
 		{
 			System.out.println("|Numero de salle: "+salle.getNum_salle()+"|Nom de la salle: "+salle.getNom_salle()+"|Etage: "+salle.getEtage()+"|Nombre de places: "+salle.getPlaces());
 		}
@@ -98,7 +105,7 @@ public final class mainClass {
 	
 	public static void main(String[] args) {
 		modeleUtilisateur.select(tousLesAbonnes);
-		SallesList.addAll(SQLSalle.placeSalle());
+		sallesList.addAll(SQLSalle.placeSalle());
 		mainClass.afficheSalle();
 		int tel=013025;
 		SQLUtilisateur moi= new SQLUtilisateur();
@@ -112,7 +119,8 @@ public final class mainClass {
 		moi.setTel(tel);
 		tousLesAbonnes.add(moi);
 		afficheUtilisateur();
-		Accueil acc=new Accueil();
+		new Accueil().setVisible(true);
+		
 		
 		
 

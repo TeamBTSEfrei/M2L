@@ -3,8 +3,6 @@ package controller;
 import java.util.regex.Pattern;
 
 import modele.SQLUtilisateur;
-import vue.Inscription;
-import vue.Validation;
 import vue.mainClass;
 	
 	

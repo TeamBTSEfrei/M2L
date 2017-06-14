@@ -2,7 +2,7 @@ package vue;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Date;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -16,6 +16,10 @@ import calendar.src.com.toedter.calendar.JCalendar;
 
 
 public class Calendrier extends JPanel{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public static java.util.Date date1;
 	static SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
 	static java.sql.Date datesql =null;

@@ -66,6 +66,7 @@ public class JMonthChooser extends JPanel implements ItemListener,
 
 	private JYearChooser yearChooser;
 
+	@SuppressWarnings("rawtypes")
 	private JComboBox comboBox;
 
 	private JSpinner spinner;
@@ -87,6 +88,7 @@ public class JMonthChooser extends JPanel implements ItemListener,
 	 * @param hasSpinner
 	 *            true, if the month chooser should have a spinner component
 	 */
+	@SuppressWarnings("rawtypes")
 	public JMonthChooser(boolean hasSpinner) {
 		super();
 		setName("JMonthChooser");
@@ -130,6 +132,7 @@ public class JMonthChooser extends JPanel implements ItemListener,
 	/**
 	 * Initializes the locale specific month names.
 	 */
+	@SuppressWarnings("unchecked")
 	public void initNames() {
 		localInitialize = true;
 

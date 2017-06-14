@@ -11,7 +11,7 @@ public class controlConnexion {
 	public static boolean laVerite;
 	public static boolean userExist;
 
-	private static ArrayList<SQLReservation> reservationList=new ArrayList<SQLReservation>();
+
 	
 	public static void validUser(ArrayList<SQLUtilisateur> userList ,String user, String mdp) {
 		userExist=false;

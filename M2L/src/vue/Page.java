@@ -11,7 +11,12 @@ import java.awt.event.WindowEvent;
 
 public class Page extends Frame {
     
-	   public Page(){
+	   /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public Page(){
 	      super("M2L");
 	      prepareGUI();
 	   }
@@ -21,7 +26,7 @@ public class Page extends Frame {
 	      //awtGraphicsDemo.setVisible(true);
 		  //Accueil accueil = new Accueil();
 		   
-		   Accueil accueil = new Accueil();
+		   new Accueil().setVisible(true);
 	      //RDC room = new RDC();
 	   }
 

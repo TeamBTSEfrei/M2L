@@ -37,6 +37,7 @@ import javax.swing.JFrame;
  * @version $LastChangedRevision: 85 $
  * @version $LastChangedDate: 2006-04-28 13:50:52 +0200 (Fr, 28 Apr 2006) $
  */
+@SuppressWarnings("rawtypes")
 public class JLocaleChooser extends JComboBox implements ItemListener {
 	private static final long serialVersionUID = 8152430789764877431L;
 	protected JComponent component;
@@ -60,6 +61,7 @@ public class JLocaleChooser extends JComboBox implements ItemListener {
 	/**
 	 * Default JLocaleChooser constructor.
 	 */
+	@SuppressWarnings("unchecked")
 	public JLocaleChooser(JComponent component) {
 		super();
 		this.component = component;

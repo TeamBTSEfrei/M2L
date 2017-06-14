@@ -2,10 +2,9 @@ package vue;
 
 
 import java.awt.Font;
-import java.awt.Image;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Date;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -13,7 +12,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import modele.SQLReservation;
-import modele.SQLUtilisateur;
+
 
 public class Accueil extends JFrame{
 	private static boolean connect=false;
@@ -81,14 +80,14 @@ public class Accueil extends JFrame{
 	    	public void actionPerformed(ActionEvent e){
 	    		if(connect)
 	    		{
-		    		Building building = new Building();
+		    		new Building().setVisible(true);
 		    		dispose();
 		            //other.myMethod();	 
 	    			
 	    		}
 	    		else{
 	    			valid.Valid("Vous devez etre connecter pour louer une salle");	    			
-	    			Connexion conn=new Connexion();
+	    			new Connexion().setVisible(true);
 		    		dispose();
 	    		}
    
@@ -100,7 +99,7 @@ public class Accueil extends JFrame{
 	    creer.setBounds(900, 300, 400, 100);
 	    creer.addActionListener(new ActionListener(){
 	    	public void actionPerformed(ActionEvent e){
-	    		Inscription compte = new Inscription();
+	    		new Inscription().setVisible(true);;
 	    		dispose();
 	            //other.myMethod();	    
 	    
@@ -114,8 +113,8 @@ public class Accueil extends JFrame{
 	    connecter.setBounds(1300, 300, 400, 100);
 	    connecter.addActionListener(new ActionListener(){
 	    	public void actionPerformed(ActionEvent e){
-	    		Connexion conn=new Connexion();
-
+	    		new Connexion().setVisible(true);;
+	    		dispose();
 	            //other.myMethod();	    
 	    
 	    	}
@@ -150,7 +149,7 @@ public class Accueil extends JFrame{
 			  reserv.setNomSalle("Galilée");
 			  reserv.setNomBatiment("A");
 			  reserv.setDate(java.sql.Date.valueOf("2017-06-18"));
-			  MesReservation mareservation=new MesReservation(reserv);
+			  new MesReservation(reserv).setVisible(true);
 	    		dispose();
 	            //other.myMethod();	    
 	    
@@ -175,7 +174,8 @@ public class Accueil extends JFrame{
 	    admin.setBounds(100, 500, 1600, 100);
 	    admin.addActionListener(new ActionListener(){
 	    	public void actionPerformed(ActionEvent e){
-	    		
+	    	    
+	    		new ZoneAdmin().setVisible(true);
 	    		dispose();
 	            //other.myMethod();	    
 	    

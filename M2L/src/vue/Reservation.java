@@ -4,20 +4,24 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
 import calendar.src.com.toedter.calendar.JCalendar;
-import controller.controlConnexion;
+
 import modele.SQLSalle;
 import modele.SQLUtilisateur;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.Dialog.ModalityType;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.Calendar;
+
 import java.util.Date;
 import java.util.Locale;
 public class Reservation extends JFrame{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	static String dateString=new String();
 	static java.util.Date dateUtil=new java.util.Date();
 	static java.sql.Date dateSQL;
@@ -123,7 +127,7 @@ public class Reservation extends JFrame{
     
     returne.addActionListener(new ActionListener(){
 	     public void actionPerformed(ActionEvent e){ 
-	     Building building = new Building();
+	     new Building().setVisible(true);
 	     dispose();
 	            //other.myMethod();
 	     }
@@ -135,7 +139,7 @@ public class Reservation extends JFrame{
 	public static void main(String[] args){
 
 		   
-		Reservation reserv = new Reservation(101);
+		new Reservation(101).setVisible(true);
 	      
 	   }
 	

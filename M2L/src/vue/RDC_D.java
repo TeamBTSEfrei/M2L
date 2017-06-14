@@ -59,7 +59,7 @@ public class RDC_D extends JFrame{
 	    
 	    returne.addActionListener(new ActionListener(){
 	     public void actionPerformed(ActionEvent e){
-	      Building building = new Building();
+	      new Building().setVisible(true);
 	      dispose();
 	            //other.myMethod();
 	     }
@@ -68,28 +68,28 @@ public class RDC_D extends JFrame{
 		     public void actionPerformed(ActionEvent e){
 
 		    	 new Reservation(401);
-	
+		    	 dispose();
 		     }
 		    });
 	    Cuisine.addActionListener(new ActionListener(){
 		     public void actionPerformed(ActionEvent e){
 
 		    	 new Reservation(402);
-	
+		    	 dispose();
 		     }
 		    });
 	    S_Restau.addActionListener(new ActionListener(){
 		     public void actionPerformed(ActionEvent e){
 
 		    	 new Reservation(403);
-	
+		    	 dispose();
 		     }
 		    });
 	    Reprographie.addActionListener(new ActionListener(){
 		     public void actionPerformed(ActionEvent e){
 
 		    	 new Reservation(404);
-	
+		    	 dispose();
 		     }
 		    });
 	    

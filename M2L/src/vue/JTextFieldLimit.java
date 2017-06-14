@@ -3,7 +3,11 @@ package vue;
 import javax.swing.text.*;
 
 public class JTextFieldLimit extends PlainDocument {
-	  private int limit;
+	  /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private int limit;
 
 	  JTextFieldLimit(int limit) {
 	   super();

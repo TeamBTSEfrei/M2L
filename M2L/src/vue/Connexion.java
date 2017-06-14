@@ -4,7 +4,7 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
+
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -13,8 +13,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import controller.controlConnexion;
-import modele.SQLUtilisateur;
-import modele.modeleUtilisateur;
 
 
 public class Connexion extends JFrame{
@@ -60,7 +58,7 @@ public class Connexion extends JFrame{
 		retour.setBounds(100, 1000, 50, 50);
     	retour.addActionListener(new ActionListener(){
  	    	public void actionPerformed(ActionEvent e){
- 	    		Accueil accueil = new Accueil();
+ 	    		new Accueil().setVisible(true);
  	    		dispose();
  	    		}
     			});
@@ -87,7 +85,7 @@ public class Connexion extends JFrame{
 
 	public static void main(String[] args){
 		
-		Connexion conn=new Connexion();
+	new Connexion().setVisible(true);
 		
 		
 	}

@@ -1,7 +1,6 @@
 package vue;
 
-import java.awt.BorderLayout;
-import java.awt.Dimension;
+
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -11,12 +10,12 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
+
 import javax.swing.JTextField;
 
 import controller.ControlInscription;
 import modele.SQLUtilisateur;
-import modele.modeleUtilisateur;
+
 
 
 public class Inscription extends JFrame{
@@ -107,7 +106,7 @@ public class Inscription extends JFrame{
 		retour.setBounds(100, 1000, 50, 50);
     	retour.addActionListener(new ActionListener(){
  	    	public void actionPerformed(ActionEvent e){
- 	    		Accueil accueil = new Accueil();
+ 	    		new Accueil().setVisible(true);
  	    		dispose();
  	    		}
     			});
@@ -151,7 +150,7 @@ public class Inscription extends JFrame{
 
  	    			if(ControlInscription.validData(nom,prenom ,email ,mdp ,mdp1 ,adress,tel,SUSU))
  	    				{
- 	    				int a=mainClass.compteUsers();
+ 	    				int a=mainClass.getSizeOfTousLesAbonnes();
  	    				SQLUtilisateur utilisateur = new SQLUtilisateur();
  	    				utilisateur.setNum_user(a);
  	 	    			utilisateur.setNom(entre1.getText());
@@ -181,7 +180,7 @@ public class Inscription extends JFrame{
  	 		    		mainClass.addUnUtilisateur(utilisateur);
  	 		    		mainClass.afficheUtilisateur();
  	 		    		valid.Valid("Votre compte a été enregistré.");
- 	 	 	    		Accueil accueil = new Accueil();
+ 	 	 	    		new Accueil().setVisible(true);;
  	 	 	    		dispose();
  	    				
  	    			}
@@ -205,7 +204,7 @@ public class Inscription extends JFrame{
 
 											}
 	public static void main(String[] args) {
-		Inscription inscri = new Inscription();
+		new Inscription().setVisible(true);
 	
 	}
 	}
