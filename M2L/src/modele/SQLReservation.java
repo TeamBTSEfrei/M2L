@@ -1,6 +1,8 @@
 package modele;
 
-import java.util.Date;
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 public class SQLReservation {
 	
@@ -139,4 +141,11 @@ public class SQLReservation {
 		datetxt=date1.toString();
 		return datetxt;
 	}
+	public void setTxtDate(String dateStr)
+	{
+		this.setDate(java.sql.Date.valueOf(dateStr));
+		
+	}
+
+	
 }

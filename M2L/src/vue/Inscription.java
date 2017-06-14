@@ -150,9 +150,11 @@ public class Inscription extends JFrame{
  	    		else{
 
  	    			if(ControlInscription.validData(nom,prenom ,email ,mdp ,mdp1 ,adress,tel,SUSU))
- 	    			{
+ 	    				{
+ 	    				int a=mainClass.compteUsers();
  	    				SQLUtilisateur utilisateur = new SQLUtilisateur();
- 	 	    			utilisateur.setNom(entre2.getText());
+ 	    				utilisateur.setNum_user(a);
+ 	 	    			utilisateur.setNom(entre1.getText());
  	 		    		utilisateur.setPrenom(entre2.getText());
  	 		    		utilisateur.setEmail(entre3.getText());
  	 		    		utilisateur.setMdp(entre4.getText());
@@ -164,10 +166,10 @@ public class Inscription extends JFrame{
  	 		    			utilisateur.setAdresse(entre6.getText());
  	 		    		}
  	 		    		if(entre7.getText().isEmpty()){
- 	 		    			utilisateur.setTel(6789);
+ 	 		    			utilisateur.setTel(0000000000);
  	 		    		}
  	 		    		else{
- 	 	 		    		utilisateur.setTel(Integer.parseInt(entre7.getText()));
+ 	 	 		    		utilisateur.setTel(Long.parseLong(entre7.getText()));
  	 		    		}
  	 		    		if(SUSU=="non"){
  	 		    			utilisateur.setSuperUser(false);
@@ -186,7 +188,7 @@ public class Inscription extends JFrame{
  	    			
  	    			else
  	    			{
- 	    				valid.Valid("Le compte n'est pas enregistré, une information a mal ete saisie.");
+ 	    				valid.Valid("Le compte n'est pas enregistré, "+ControlInscription.getMessage()+".");
  	    			}
  	    			
  	    		}

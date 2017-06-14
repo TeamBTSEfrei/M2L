@@ -9,15 +9,17 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Date;
 import java.sql.*;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-
+ 
 public class monCompte extends JFrame {
+	public static boolean datechanger = false;
 	public int rese=3;
 	static java.sql.Date date=null;
 	protected static final SimpleDateFormat dateFormat =new SimpleDateFormat("dd-MM-yyyy");
 	Validation valid=new Validation();
 	public monCompte(SQLReservation reserv) {
-		
+		/*
 		Font font_button = new Font("Arial", Font.PLAIN, 35);
 	    Font font_title = new Font("Arial", Font.PLAIN, 20);
 	    this.setTitle("Mofifier/Annuler une reservation");
@@ -115,18 +117,21 @@ public class monCompte extends JFrame {
 	    
 	    modifier.addActionListener(new ActionListener(){
 		     public void actionPerformed(ActionEvent e){
-		    	 
+		    	 DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
+		    	 String text = df.format(date);
+		    	 dateReservation.setText(text);
+		    	 reserv.setDate(date);
 		    	 reserv.setNomBatiment(batiment.getText());
 		    	 reserv.setNomSalle(salle.getText());
 		    	 reserv.setDate(date);
-		    	 dateReservation.setText(reserv.getTxtDate());
-		    	 
+
 		    	 String a=new String();
 		    	 a=("vos nouvelles information:\n Batiment :"+reserv.getNomBatiment()+"\nSalle: "+reserv.getNomSalle()+"\nDate de réservation:"+dateReservation.getText());
 		    	 reserv.getDate();
 		    	 System.out.println(a);
 		    	 valid.Valid("Vos modifications ont ete pris en compte");
-		    	 
+		    	 Accueil acc= new Accueil();
+		    	 dispose();
 		     }
 		    });
 	    
@@ -163,7 +168,7 @@ public class monCompte extends JFrame {
 		this.setVisible(true);
 	}
 	  public static void main(String[] args){
-		  java.util.Date date = new java.util.Date();
+		  
 		  SQLReservation reserv=new SQLReservation();
 		  reserv.setNum_res(1);
 		  reserv.setNum_user(1);
@@ -176,6 +181,8 @@ public class monCompte extends JFrame {
 		  reserv.setNomBatiment("A");
 		  reserv.setDate(java.sql.Date.valueOf("2017-06-18"));
 		  monCompte compte=new monCompte(reserv);
+		 
+*/
 		  
 	  }
 }

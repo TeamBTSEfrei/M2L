@@ -8,14 +8,24 @@ import modele.SQLSalle;
 import modele.SQLUtilisateur;
 import modele.modeleUtilisateur;
 
-public class mainClass {
+public final class mainClass {
 	private static ArrayList<SQLUtilisateur> tousLesAbonnes= new ArrayList<SQLUtilisateur>();
 	private static ArrayList<SQLBatiment> batimentList=new ArrayList<SQLBatiment>();
 	private static ArrayList<SQLSalle> SallesList=new ArrayList<SQLSalle>();
+	private static SQLUtilisateur userConnected =new SQLUtilisateur();
+	private static ArrayList<SQLReservation> reservationList=new ArrayList<SQLReservation>();
 	public static ArrayList<SQLSalle> getSallesList() {
 		return SallesList;
 	}
-
+	public static int compteUsers()
+	{
+		int a=100;
+		for(SQLUtilisateur za:tousLesAbonnes)
+		{
+			a++;
+		}
+		return a;
+	}
 
 	public static void setSallesList(ArrayList<SQLSalle> sallesList) {
 		SallesList = sallesList;
@@ -45,13 +55,7 @@ public class mainClass {
 		mainClass.batimentList = batimentList;
 	}
 
-	public static ArrayList<SQLSalle> getSalleList() {
-		return salleList;
-	}
 
-	public static void setSalleList(ArrayList<SQLSalle> salleList) {
-		mainClass.salleList = salleList;
-	}
 
 	public static SQLUtilisateur getUserConnected() {
 		return userConnected;
@@ -69,9 +73,6 @@ public class mainClass {
 		mainClass.reservationList = reservationList;
 	}
 
-	private static ArrayList<SQLSalle> salleList=new ArrayList<SQLSalle>();
-	private static SQLUtilisateur userConnected = null;
-	private static ArrayList<SQLReservation> reservationList=new ArrayList<SQLReservation>();
 	
 	public static void addUnUtilisateur(SQLUtilisateur user)
 	{

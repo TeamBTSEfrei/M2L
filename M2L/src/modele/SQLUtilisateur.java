@@ -7,7 +7,7 @@ public class SQLUtilisateur {
 	private  String prenom ;
 	private  String adresse;
 	private  String email;
-	private  int tel;
+	private  long tel;
 	private  String mdp;
 	private boolean superUser;
 	
@@ -57,10 +57,10 @@ public class SQLUtilisateur {
 	}
 	
 	
-	public  int getTel() {
+	public  long getTel() {
 		return this.tel;
 	}
-	public  void setTel(int tel) {
+	public  void setTel(long tel) {
 		this.tel = tel;
 	}
 	public  String getMdp() {

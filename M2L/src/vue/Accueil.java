@@ -13,14 +13,23 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import modele.SQLReservation;
+import modele.SQLUtilisateur;
 
 public class Accueil extends JFrame{
-	public static boolean connect=false;
+	private static boolean connect=false;
+	public static boolean isConnect() {
+		return connect;
+	}
+
+	public static void setConnect(boolean connect) {
+		Accueil.connect = connect;
+	}
+
 	private static final long serialVersionUID = 1L;
 
 	public Accueil(){
+		Validation valid=new Validation();
 		
-
 		this.setTitle("Acceuil M2L");
 	    this.setSize(1920, 1080);
 	    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -32,6 +41,7 @@ public class Accueil extends JFrame{
 	    JButton louer = new JButton();
 	    JButton creer = new JButton();
 	    JButton connecter = new JButton();
+	    JButton deconnecter = new JButton();
 	    JButton admin = new JButton();
 	    JButton quitter= new JButton();
 	    JButton compte= new JButton();
@@ -41,10 +51,9 @@ public class Accueil extends JFrame{
 	    this.add(accueil);
 	    accueil.add(M2L);
 	    accueil.add(louer);
-	    accueil.add(creer);
 	    accueil.add(admin);
 	    accueil.add(quitter);
-	    accueil.add(compte);
+	    
 	    logo.setText("Maison des ligue de Lorraine");
 	    
 	    logo.setBounds(100, 50, 1200, 200);
@@ -70,9 +79,19 @@ public class Accueil extends JFrame{
 	    louer.setBounds(500, 300, 400, 100);
 	    louer.addActionListener(new ActionListener(){
 	    	public void actionPerformed(ActionEvent e){
-	    		Building building = new Building();
-	    		dispose();
-	            //other.myMethod();	    
+	    		if(connect)
+	    		{
+		    		Building building = new Building();
+		    		dispose();
+		            //other.myMethod();	 
+	    			
+	    		}
+	    		else{
+	    			valid.Valid("Vous devez etre connecter pour louer une salle");	    			
+	    			Connexion conn=new Connexion();
+		    		dispose();
+	    		}
+   
 	    	}
 	    });
 	    
@@ -96,7 +115,20 @@ public class Accueil extends JFrame{
 	    connecter.addActionListener(new ActionListener(){
 	    	public void actionPerformed(ActionEvent e){
 	    		Connexion conn=new Connexion();
-	    		connect=true;
+
+	            //other.myMethod();	    
+	    
+	    	}
+	    });
+	    
+	    deconnecter.setText("Déconnexion");
+	    deconnecter.setFont(new Font("Arial", Font.PLAIN, 30));
+	    deconnecter.setBounds(1300, 300, 400, 100);
+	    deconnecter.addActionListener(new ActionListener(){
+	    	public void actionPerformed(ActionEvent e){
+	    		Accueil.setConnect(false);
+	    		mainClass.setUserConnected(null);
+	    		
 	    		dispose();
 	            //other.myMethod();	    
 	    
@@ -104,21 +136,21 @@ public class Accueil extends JFrame{
 	    });
 	    compte.setText("Mon compte");
 	    compte.setFont(new Font("Arial", Font.PLAIN, 30));
-	    compte.setBounds(1300, 300, 400, 100);
+	    compte.setBounds(900, 300, 400, 100);
 	    compte.addActionListener(new ActionListener(){
 	    	public void actionPerformed(ActionEvent e){
-	    		SQLReservation reserv=new SQLReservation();
-	    		reserv.setNum_res(1);
-	    		reserv.setNum_user(1);
-	    		reserv.setNum_bat(1);
-	    		reserv.setEtage(1);
-	    		reserv.setNum_salle(1);
-	    		reserv.setNomUser("Boufkhed");
-	    		reserv.setPrenomUser("Saïd");
-	    		reserv.setNomSalle("Galilée");
-	    		reserv.setNomBatiment("A");
-	    		
-	    		monCompte compte=new monCompte(reserv);
+	  		  SQLReservation reserv=new SQLReservation();
+			  reserv.setNum_res(1);
+			  reserv.setNum_user(1);
+			  reserv.setNum_bat(1);
+			  reserv.setEtage(1);
+			  reserv.setNum_salle(1);
+			  reserv.setNomUser("Boufkhed");
+			  reserv.setPrenomUser("Saïd");
+			  reserv.setNomSalle("Galilée");
+			  reserv.setNomBatiment("A");
+			  reserv.setDate(java.sql.Date.valueOf("2017-06-18"));
+			  MesReservation mareservation=new MesReservation(reserv);
 	    		dispose();
 	            //other.myMethod();	    
 	    
@@ -126,11 +158,15 @@ public class Accueil extends JFrame{
 	    }); 
 	    if (connect){
 	    	accueil.remove(connecter);
+	    	accueil.remove(creer);
 	    	accueil.add(compte);
+	    	accueil.add(deconnecter);
 	    	
 	    }
 	    else{
+	    	accueil.remove(deconnecter);
 	    	accueil.remove(compte);
+	    	accueil.add(creer);
 	    	accueil.add(connecter);
 	    }
 	   
@@ -151,7 +187,6 @@ public class Accueil extends JFrame{
 	    quitter.setBounds(1300, 900, 400, 100);
 	    quitter.addActionListener(new ActionListener(){
 	    	public void actionPerformed(ActionEvent e){
-	    		
 	    		dispose();
 	            //other.myMethod();	    
 	    

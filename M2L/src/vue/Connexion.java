@@ -72,7 +72,9 @@ public class Connexion extends JFrame{
 		valider.addActionListener(new ActionListener(){
  	    	public void actionPerformed(ActionEvent e){
 
- 	    	controlConnexion.validUser(mainClass.getTousLesAbonnes(),entre_email.getText(), entre_mdp.getText());}});
+ 	    	controlConnexion.validUser(mainClass.getTousLesAbonnes(),entre_email.getText(), entre_mdp.getText());
+ 	    	}
+ 	    });
     	
 
 		this.setContentPane(contenuFenêtre);

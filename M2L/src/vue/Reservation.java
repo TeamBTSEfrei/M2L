@@ -30,7 +30,7 @@ public class Reservation extends JFrame{
 
 	cetteSalle=SQLSalle.TrouveSalle(listSalle,salle);
 	SQLSalle.afficheSalle(cetteSalle);
-	SQLUtilisateur userConnected = controlConnexion.getUserConnected();
+	SQLUtilisateur userConnected = mainClass.getUserConnected();
 		
 
 	String nom_salle = cetteSalle.getNom_salle();
