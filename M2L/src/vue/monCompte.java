@@ -2,9 +2,9 @@ package vue;
 
 import javax.swing.*;
 
-import modele.SQLReservation;
 
-
+import java.awt.Font;
+import java.awt.GridLayout;
 import java.text.SimpleDateFormat;
  
 public class monCompte extends JFrame {
@@ -17,7 +17,106 @@ public class monCompte extends JFrame {
 	static java.sql.Date date=null;
 	protected static final SimpleDateFormat dateFormat =new SimpleDateFormat("dd-MM-yyyy");
 	Validation valid=new Validation();
-	public monCompte(SQLReservation reserv) {
+	public monCompte() {
+		
+		Font font = new Font("SansSerif", Font.BOLD, 30);
+		JPanel contenuFenêtre = new JPanel();
+		contenuFenêtre.setSize(1920, 1080);
+		GridLayout disposition = new GridLayout(9,3,30,15);
+		contenuFenêtre.setLayout(disposition);
+		JLabel nom = new JLabel("Nom* : ");
+		JTextField nomUser = new JTextField(10);
+		JLabel prenom = new JLabel("Prénom* : ");
+		JTextField prenomUser = new JTextField(10);
+		JLabel email = new JLabel("Email* : (!Identifiant)");
+		JTextField emailUser = new JTextField(10);
+		JLabel Mot_de_passe = new JLabel("Mot de passe*");
+		JPasswordField password = new JPasswordField(10);
+		
+		JPasswordField password1 = new JPasswordField(10);
+		JTextField adresseUser = new JTextField(10);
+		JLabel telephone = new JLabel("Téléphone : ");
+		JTextField telephoneUser = new JTextField(10);
+		JLabel adresse = new JLabel("Adresse : ");
+		JLabel mdpSuperUser = new JLabel("Mot de passe superUser (si non, tapez 'non') ");
+		JPasswordField pswdSUUser = new JPasswordField(10);
+		
+		
+		
+		nomUser.setFont(font);
+		nom.setFont (font);
+		prenom.setFont (font);
+		adresse.setFont (font);
+		mdpSuperUser.setFont (font);
+		email.setFont (font);
+		telephone.setFont (font);
+		Mot_de_passe.setFont (font);
+		
+		
+		nomUser.setFont(font);
+		prenomUser.setFont(font);
+		emailUser.setFont(font);
+		password.setFont(font);
+		password1.setFont(font);
+		adresseUser.setFont(font);
+		telephoneUser.setFont(font);
+		pswdSUUser.setFont(font);
+		
+			
+		nomUser.setDocument(new JTextFieldLimit(50));
+		prenomUser.setDocument(new JTextFieldLimit(50));
+		emailUser.setDocument(new JTextFieldLimit(50));
+		password.setDocument(new JTextFieldLimit(50));
+		password1.setDocument(new JTextFieldLimit(50));
+		adresseUser.setDocument(new JTextFieldLimit(50));
+		telephoneUser.setDocument(new JTextFieldLimit(50));
+		pswdSUUser.setDocument(new JTextFieldLimit(50));
+		
+		
+		// Ajoute les contrôles au panneau			
+		contenuFenêtre.add(nom);
+		contenuFenêtre.add(nomUser);
+		contenuFenêtre.add(prenom);
+		contenuFenêtre.add(prenomUser);
+		contenuFenêtre.add(email);
+		contenuFenêtre.add(emailUser);
+		contenuFenêtre.add(Mot_de_passe);
+		contenuFenêtre.add(password);
+		contenuFenêtre.add(password1);
+		contenuFenêtre.add(adresseUser);
+		contenuFenêtre.add(adresse);
+		contenuFenêtre.add(telephoneUser);
+		contenuFenêtre.add(telephone);
+		contenuFenêtre.add(pswdSUUser);
+		contenuFenêtre.add(mdpSuperUser);
+		
+		nomUser.setText(mainClass.getUserConnected().getNom());
+		prenomUser.setText(mainClass.getUserConnected().getPrenom());
+		emailUser.setText(mainClass.getUserConnected().getEmail());
+		password.setText(mainClass.getUserConnected().getMdp());
+		password1.setText(mainClass.getUserConnected().getMdp());
+		adresseUser.setText(mainClass.getUserConnected().getAdresse());
+		telephoneUser.setText(""+mainClass.getUserConnected().getTel());
+		if(mainClass.getUserConnected().isSuperUser())
+		{
+			pswdSUUser.setText(mainClass.getSU());
+		}else
+		{
+			pswdSUUser.setText("non");
+		}
+		
+	    this.setContentPane(contenuFenêtre);
+		this.setSize(1920, 1080);
+		this.setVisible(true);
+		
+		
+		
+	}
+	public static void main(String[] args){
+	
+	new monCompte().setVisible(true);
+	}
+}
 		/*
 		Font font_button = new Font("Arial", Font.PLAIN, 35);
 	    Font font_title = new Font("Arial", Font.PLAIN, 20);
@@ -183,5 +282,4 @@ public class monCompte extends JFrame {
 		 
 */
 		  
-	  }
-}
+	

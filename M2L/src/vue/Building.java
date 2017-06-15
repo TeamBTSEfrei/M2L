@@ -102,6 +102,7 @@ public Building(){
     bat_H.setBackground(Color.blue);
     
     this.getContentPane().add(b1);
+    this.setExtendedState(JFrame.MAXIMIZED_BOTH);
     this.setVisible(true);
   }
 }

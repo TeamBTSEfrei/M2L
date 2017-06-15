@@ -10,7 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import controller.ControlInscription;
@@ -43,15 +43,15 @@ public class Inscription extends JFrame{
 		JLabel email = new JLabel("Email* : (!Identifiant)");
 		JTextField entre3 = new JTextField(10);
 		JLabel Mot_de_passe = new JLabel("Mot de passe*");
-		JTextField entre4 = new JTextField(10);
+		JPasswordField entre4 = new JPasswordField(10);
 		JLabel Mot_de_passe1 = new JLabel("Valider le mot de passe* : ");
-		JTextField entre5 = new JTextField(10);
+		JPasswordField entre5 = new JPasswordField(10);
 		JLabel telephone = new JLabel("Téléphone : ");
 		JTextField entre6 = new JTextField(10);
 		JLabel adresse = new JLabel("Adresse : ");
 		JTextField entre7 = new JTextField(10);
 		JLabel mdpSuperUser = new JLabel("Mot de passe superUser (si non, tapez 'non') ");
-		JTextField entre8 = new JTextField(10);
+		JPasswordField entre8 = new JPasswordField(10);
 		
 		entre1.setFont(font);
 		nom.setFont (font);
@@ -120,23 +120,23 @@ public class Inscription extends JFrame{
 	    			String prenom=entre2.getText();
 	    			String email=entre3.getText();
 	    			String adress=entre6.getText();
-	    			String mdp=entre4.getText();
-	    			String mdp1=entre5.getText();
+	    			String mdp=String.valueOf(entre4.getPassword());
+	    			String mdp1=String.valueOf(entre5.getPassword());
 	    			int tel=Integer.parseInt(entre7.getText());
-	    			String SUSU=entre8.getText();
-
+	    			String SUSU = String.valueOf(entre8.getPassword());
+	    		
  	    		//System.out.print("s1:"+s1);
  	    		Validation valid=new Validation();
  	    		if(entre1.getText().isEmpty())
  	    		{
  	    			valid.Valid("ERREUR: Vous n'avez pas rempli tous les champs obligatoires");
  	    		}
- 	    		else if(!(entre4.getText().equals(entre5.getText())))
+ 	    		else if(!(mdp.equals(mdp1)))
  	    		{
  	    			valid.Valid("ERREUR: Votre mot de passe ne concorde pas ");
  	    			
  	    		}
- 	    		else if(entre4.getText().isEmpty()||entre5.getText().isEmpty())
+ 	    		else if(mdp.isEmpty()||mdp1.isEmpty())
  	    		{
  	    			valid.Valid("ERREUR: veillez saisir votre mot de passe 2 fois ");
  	    		}
@@ -153,16 +153,16 @@ public class Inscription extends JFrame{
  	    				int a=mainClass.getSizeOfTousLesAbonnes();
  	    				SQLUtilisateur utilisateur = new SQLUtilisateur();
  	    				utilisateur.setNum_user(a);
- 	 	    			utilisateur.setNom(entre1.getText());
- 	 		    		utilisateur.setPrenom(entre2.getText());
- 	 		    		utilisateur.setEmail(entre3.getText());
- 	 		    		utilisateur.setMdp(entre4.getText());
- 	 		    		if(entre6.getText().isEmpty()){
+ 	 	    			utilisateur.setNom(nom);
+ 	 		    		utilisateur.setPrenom(prenom);
+ 	 		    		utilisateur.setEmail(email);
+ 	 		    		utilisateur.setMdp(mdp);
+ 	 		    		if(adress.isEmpty()){
  	 		    			utilisateur.setAdresse("Non renseigné");
  	 		    		}
  	 		    		
  	 		    		else{
- 	 		    			utilisateur.setAdresse(entre6.getText());
+ 	 		    			utilisateur.setAdresse(adress);
  	 		    		}
  	 		    		if(entre7.getText().isEmpty()){
  	 		    			utilisateur.setTel(0000000000);
@@ -200,6 +200,7 @@ public class Inscription extends JFrame{
 
 		// Positionne les dimensions et rend la fenêtre visible
 		this.setSize(1920, 1080);
+		  this.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		this.setVisible(true);
 
 											}

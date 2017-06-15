@@ -79,6 +79,7 @@ public class RDC_C extends JFrame{
         this.setPreferredSize(new Dimension(800,600));
         this.pack(); 
 	    //this.getContentPane().add(b1);
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
 	    this.setVisible(true);
 	}
 

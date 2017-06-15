@@ -97,7 +97,8 @@ public class RDC_D extends JFrame{
 	    
 	    JScrollPane _ScrollPane = new JScrollPane(b1);    
         this.add(_ScrollPane, BorderLayout.CENTER);       
-        this.setPreferredSize(new Dimension(800,600));
+        
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.pack(); 
 	    this.setVisible(true);
 		

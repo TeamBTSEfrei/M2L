@@ -15,7 +15,7 @@ import javax.swing.JTextField;
 import controller.controlConnexion;
 
 
-public class Connexion extends JFrame{
+public final class Connexion extends JFrame{
 
 	/**
 	 * 
@@ -58,7 +58,6 @@ public class Connexion extends JFrame{
 		retour.setBounds(100, 1000, 50, 50);
     	retour.addActionListener(new ActionListener(){
  	    	public void actionPerformed(ActionEvent e){
- 	    		new Accueil().setVisible(true);
  	    		dispose();
  	    		}
     			});
@@ -69,16 +68,21 @@ public class Connexion extends JFrame{
 		valider.setBounds(100, 1000, 50, 50);
 		valider.addActionListener(new ActionListener(){
  	    	public void actionPerformed(ActionEvent e){
-
+ 	    	
  	    	controlConnexion.validUser(mainClass.getTousLesAbonnes(),entre_email.getText(), entre_mdp.getText());
+ 	    	
  	    	}
  	    });
-    	
+		if(Accueil.isConnect()){
+			dispose();
+		}
+		
 
 		this.setContentPane(contenuFenêtre);
 
 		// Positionne les dimensions et rend la fenêtre visible
 		this.setSize(1200, 400);
+		
 		this.setVisible(true);
 
 											}

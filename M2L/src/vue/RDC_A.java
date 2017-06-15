@@ -145,6 +145,7 @@ public class RDC_A extends JFrame{
         this.pack(); 
 
 	    //this.getContentPane().add(boutonPanel);
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
 	    this.setVisible(true);
 
 	    

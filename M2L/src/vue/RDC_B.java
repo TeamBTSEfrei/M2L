@@ -125,7 +125,7 @@ public RDC_B(){
         
         this.setPreferredSize(new Dimension(800,600));
         this.pack(); 
-        
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
 	    this.setVisible(true);
 		
 	}

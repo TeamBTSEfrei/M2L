@@ -14,6 +14,24 @@ public final class mainClass {
 	private static ArrayList<SQLSalle> sallesList=new ArrayList<SQLSalle>();
 	private static SQLUtilisateur userConnected =new SQLUtilisateur();
 	
+	public mainClass(){
+		modeleUtilisateur.select(tousLesAbonnes);
+		sallesList.addAll(SQLSalle.placeSalle());
+		mainClass.afficheSalle();
+		int tel=013025;
+		SQLUtilisateur moi= new SQLUtilisateur();
+		moi.setAdresse("11 rue du poitou");
+		moi.setEmail("said.boufkhed@gmail.com");
+		moi.setNom("BOUFKHED");
+		moi.setPrenom("Said");
+		moi.setMdp("coca");
+		moi.setNum_user(1);
+		moi.setSuperUser(true);
+		moi.setTel(tel);
+		tousLesAbonnes.add(moi);
+		afficheUtilisateur();
+	}
+	
 	public static int getSizeOfTousLesAbonnes(){
 		return tousLesAbonnes.size();
 		
@@ -90,7 +108,7 @@ public final class mainClass {
 		System.out.println("|Numéro Utilisateur|Nom|Prenom|Address|Email|Telephone|Mdp|SuperUser|"); 
 		for(SQLUtilisateur abonne :tousLesAbonnes)
 		{
-			System.out.println("|"+abonne.getNum_user() +"|"+abonne.getNom()+"|"+abonne.getPrenom()+"|"+abonne.getAdresse()+"|"+abonne.getEmail()+"|"+abonne.getTel()+"|"+abonne.getMdp()+"|"+abonne.isSuperUser());
+			System.out.println("|"+abonne.getNum_user() +"|"+abonne.getNom()+"|"+abonne.getPrenom()+"|"+abonne.getAdresse()+"|"+abonne.getEmail()+"|0"+abonne.getTel()+"|"+abonne.getMdp()+"|"+abonne.isSuperUser());
 		}
 	}
 	
@@ -102,6 +120,7 @@ public final class mainClass {
 		}
 	}
 	
+
 	
 	public static void main(String[] args) {
 		modeleUtilisateur.select(tousLesAbonnes);
@@ -119,6 +138,7 @@ public final class mainClass {
 		moi.setTel(tel);
 		tousLesAbonnes.add(moi);
 		afficheUtilisateur();
+		
 		new Accueil().setVisible(true);
 		
 		

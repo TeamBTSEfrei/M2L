@@ -16,6 +16,9 @@ import modele.SQLReservation;
 
 public class Accueil extends JFrame{
 	private static boolean connect=false;
+	
+
+
 	public static boolean isConnect() {
 		return connect;
 	}
@@ -27,14 +30,14 @@ public class Accueil extends JFrame{
 	private static final long serialVersionUID = 1L;
 
 	public Accueil(){
+		new mainClass();
 		Validation valid=new Validation();
-		
+		JPanel accueil = new JPanel();
 		this.setTitle("Acceuil M2L");
 	    this.setSize(1920, 1080);
 	    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    this.setLocationRelativeTo(null);
 	    
-	    JPanel accueil = new JPanel();
 	    JButton M2L = new JButton();
 	    JButton logo = new JButton(new ImageIcon("m2l.png"));
 	    JButton louer = new JButton();
@@ -86,7 +89,7 @@ public class Accueil extends JFrame{
 	    			
 	    		}
 	    		else{
-	    			valid.Valid("Vous devez etre connecter pour louer une salle");	    			
+	    			valid.Valid("Vous devez etre connecter pour louer une salle. \n Veuillez vous connecter");	    			
 	    			new Connexion().setVisible(true);
 		    		dispose();
 	    		}
@@ -114,7 +117,7 @@ public class Accueil extends JFrame{
 	    connecter.addActionListener(new ActionListener(){
 	    	public void actionPerformed(ActionEvent e){
 	    		new Connexion().setVisible(true);;
-	    		dispose();
+	    		
 	            //other.myMethod();	    
 	    
 	    	}
@@ -174,10 +177,24 @@ public class Accueil extends JFrame{
 	    admin.setBounds(100, 500, 1600, 100);
 	    admin.addActionListener(new ActionListener(){
 	    	public void actionPerformed(ActionEvent e){
-	    	    
-	    		new ZoneAdmin().setVisible(true);
-	    		dispose();
-	            //other.myMethod();	    
+	    		if(connect)
+	    		{
+	    			if(mainClass.getUserConnected().isSuperUser()){
+	    				valid.Valid("Bienvenue dans la zone administration.\n");	    			
+	    				new ZoneAdmin().setVisible(true);
+	    	    		dispose();
+			    	
+	    			}
+	    			else{
+	    				valid.Valid("Zone réservé au administrateur seulement.\n Vous devez etre connecter en tant que super utilisateur.");
+	    			}
+	    			
+	    		}
+	    		else{
+	    			valid.Valid("Vous devez etre connecter en tant que super utilisateur. \n Veuillez vous connecter");	   			
+	    		}
+	    
+	          
 	    
 	    	}
 	    });
@@ -194,10 +211,9 @@ public class Accueil extends JFrame{
 	    });
 	
 	    
-	    
-
-	    
+	    this.setExtendedState(JFrame.MAXIMIZED_BOTH);
 	    this.setVisible(true);
+	    
 	  }    
 
  

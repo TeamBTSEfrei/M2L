@@ -133,7 +133,7 @@ public class Reservation extends JFrame{
 	     }
 	    });
     this.getContentPane().add(reservation1);
-    
+    this.setExtendedState(JFrame.MAXIMIZED_BOTH);
     this.setVisible(true);
 	}
 	public static void main(String[] args){
